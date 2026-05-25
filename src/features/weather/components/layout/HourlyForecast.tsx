@@ -1,57 +1,13 @@
 import { useEffect, useRef, useState } from "react";
-import { ChevronLeft, ChevronRight, Sun } from "lucide-react";
-
+import { ChevronRight } from "lucide-react";
 import HourlyForecastItem from "../ui/HourlyForecastItem";
-
-type ScrollDirection = "left" | "right";
-type ScrollState = "start" | "middle" | "end";
-
-type ScrollButtonProps = {
-  direction: ScrollDirection;
-  onClick: () => void;
-};
+import { hourlyForecastMockData } from "../../data/hourlyForecastMockData";
+import ScrollButton from "../ui/ScrollButton";
+import type { ScrollState } from "../../../../types/ScrollState";
 
 const SCROLL_AMOUNT = 250;
 
-function ScrollButton({ direction, onClick }: ScrollButtonProps) {
-  const Icon = direction === "left" ? ChevronLeft : ChevronRight;
-
-  const label =
-    direction === "left"
-      ? "Przewiń prognozę godzinową w lewo"
-      : "Przewiń prognozę godzinową w prawo";
-
-  return (
-    <button
-      type="button"
-      aria-label={label}
-      onClick={onClick}
-      className={`absolute top-1/2 z-40 hidden -translate-y-1/2 items-center justify-center rounded-full border border-gray-100 bg-white p-3 shadow-md xl:flex ${
-        direction === "left" ? "left-0" : "right-0"
-      }`}
-    >
-      <Icon size={26} aria-hidden="true" />
-    </button>
-  );
-}
-
 export default function HourlyForecast() {
-  const hourlyForecastMockData = [
-    {
-      id: 1,
-      hour: "09:00",
-      img: Sun,
-      alt: "Słonecznie",
-      temp: 21,
-    },
-    {
-      id: 2,
-      hour: "10:00",
-      img: Sun,
-      alt: "Słonecznie",
-      temp: 23,
-    },
-  ];
   const scrollRef = useRef<HTMLUListElement | null>(null);
   const [scrollState, setScrollState] = useState<ScrollState>("start");
 
@@ -100,8 +56,8 @@ export default function HourlyForecast() {
   const canScrollRight = scrollState !== "end";
 
   return (
-    <section className="z-100 mx-6 mt-8 rounded-2xl px-4 py-2 shadow-xl lg:mx-0 xl:mt-3">
-      <div className="flex justify-between xl:hidden">
+    <section className="mx-6 mt-8 rounded-2xl px-4 py-2 shadow-xl lg:mx-0 lg:mt-2 ">
+      <div className="flex justify-between lg:hidden">
         <h2 className="text-[10px] font-semibold">Prognoza godzinowa</h2>
 
         <button

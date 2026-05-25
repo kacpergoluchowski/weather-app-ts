@@ -21,15 +21,15 @@ export default function Header({ title, subtitle }: HeaderProps) {
           <Menu size={25} aria-hidden="true" />
         </button>
 
-        <div className="flex flex-col font-medium xl:gap-1">
-          <h1 className="flex items-center gap-2 text-base font-semibold xl:text-2xl">
+        <div className="flex flex-col font-medium lg:gap-1">
+          <h1 className="flex items-center gap-2 text-base font-semibold lg:text-2xl">
             {title}
 
             <ChevronDown size={20} aria-hidden="true" />
           </h1>
 
           {subtitle && (
-            <p className="text-xs text-gray-500 xl:text-xl">
+            <p className="text-xs text-gray-500 lg:text-xl">
               {subtitle}
             </p>
           )}

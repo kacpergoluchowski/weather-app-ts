@@ -1,0 +1,60 @@
+import { CloudRain, CloudSun, Sun } from "lucide-react";
+
+export const weeklyForecastMockData = [
+  {
+    id: 1,
+    day: "Poniedziałek",
+    icon: Sun,
+    alt: "Słonecznie",
+    maxTemp: 25,
+    minTemp: 16,
+  },
+  {
+    id: 2,
+    day: "Wtorek",
+    icon: CloudSun,
+    alt: "Częściowe zachmurzenie",
+    maxTemp: 23,
+    minTemp: 15,
+  },
+  {
+    id: 3,
+    day: "Środa",
+    icon: CloudRain,
+    alt: "Deszczowo",
+    maxTemp: 19,
+    minTemp: 13,
+  },
+  {
+    id: 4,
+    day: "Czwartek",
+    icon: Sun,
+    alt: "Bezchmurnie",
+    maxTemp: 27,
+    minTemp: 18,
+  },
+  {
+    id: 5,
+    day: "Piątek",
+    icon: CloudSun,
+    alt: "Lekkie zachmurzenie",
+    maxTemp: 22,
+    minTemp: 14,
+  },
+  {
+    id: 6,
+    day: "Sobota",
+    icon: CloudRain,
+    alt: "Przelotne opady",
+    maxTemp: 18,
+    minTemp: 12,
+  },
+  {
+    id: 7,
+    day: "Niedziela",
+    icon: Sun,
+    alt: "Słonecznie",
+    maxTemp: 26,
+    minTemp: 17,
+  },
+];

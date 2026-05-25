@@ -16,7 +16,7 @@ export default function AppLayout() {
     }
 
   return (
-    <div className="flex gap-5">
+    <div className="flex gap-5 pb-22 lg:pb-5 2xl:pb-0">
       <DesktopSidebar />
       <div className="w-full xl:w-5/6">
         <Header title={headerData.title} subtitle={headerData.subtitle} />
