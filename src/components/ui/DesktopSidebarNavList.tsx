@@ -13,7 +13,7 @@ const navItems: NavItem[] = [
 
 export default function DesktopSidebarNavList() {
   return (
-    <nav>
+    <nav aria-label="główna nawigacja">
       {navItems.map((item) => (
         <DesktopSidebarNavItem
           key={item.id}

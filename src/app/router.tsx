@@ -1,7 +1,8 @@
 import { createBrowserRouter } from "react-router-dom";
-import AppLayout from "./layouts/AppLayout";
-import HomePage from "./pages/HomePage";
-import ForecastPage from "./pages/ForecastPage";
+import AppLayout from "../layouts/AppLayout";
+import HomePage from "../pages/HomePage";
+import ForecastPage from "../pages/ForecastPage";
+
 
 export const router = createBrowserRouter([
   {
