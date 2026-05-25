@@ -1,6 +1,6 @@
 import { Calendar, House, Radar, Settings, Wind } from "lucide-react";
 import { NavLink } from "react-router-dom";
-import type { MobileNavItems } from "../../types/mobileNavItems";
+import type { MobileNavItems } from "../../types/MobileNavItems";
 
 const navItems: MobileNavItems[] = [
   {
