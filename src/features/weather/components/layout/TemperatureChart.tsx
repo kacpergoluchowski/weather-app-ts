@@ -27,7 +27,7 @@ const activeTemperatureDotStyle = {
   strokeWidth: 2,
 };
 
-export default function TemperatureChart({ data = [] }) {
+export default function TemperatureChart() {
   return (
     <section
       aria-label="Wykres temperatury godzinowej"

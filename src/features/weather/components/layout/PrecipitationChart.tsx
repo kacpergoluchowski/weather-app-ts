@@ -7,7 +7,7 @@ const chartTickStyle = {
   fontWeight: 500,
 };
 
-export default function PrecipitationChart({ data = [] }) {
+export default function PrecipitationChart() {
   return (
     <section
       aria-label="Wykres opadów godzinowych"
