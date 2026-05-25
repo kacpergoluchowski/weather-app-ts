@@ -1,9 +1,11 @@
+import type { WeatherInfoType } from "../../../../types/WeatherInfoType";
+
 export default function WeatherInfoCard({
   title,
   icon: Icon,
   value,
   description,
-}) {
+}: WeatherInfoType) {
   return (
     <section className=" rounded-3xl border border-slate-200 bg-white p-5 shadow-sm transition-all duration-300 hover:shadow-md lg:w-1/3 2xl:w-full 2xl:mx-0 2xl:mt-3">
       <div className="mb-6 flex items-center justify-between">
