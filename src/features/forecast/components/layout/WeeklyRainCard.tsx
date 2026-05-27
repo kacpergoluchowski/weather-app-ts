@@ -1,4 +1,4 @@
-import { ChevronRight, CloudRain } from "lucide-react";
+import { CloudRain } from "lucide-react";
 
 export default function WeeklyRainCard() {
   const rainData = [

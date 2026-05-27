@@ -1,4 +1,4 @@
-import { ChevronRight, Wind } from "lucide-react";
+import { Wind } from "lucide-react";
 
 export default function StrongestWindCard() {
   const windData = [
