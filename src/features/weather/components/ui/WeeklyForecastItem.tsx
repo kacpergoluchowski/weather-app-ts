@@ -1,8 +1,7 @@
 import { ChevronRight } from "lucide-react";
-import type { WeeklyForecastItemType } from "../../../../types/WeeklyForecastItemType";
 
 type WeeklyForecastItemProps = {
-  data: WeeklyForecastItemType;
+  data: any;
 };
 
 export default function WeeklyForecastItem({
