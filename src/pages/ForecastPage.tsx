@@ -1,14 +1,18 @@
+import { useOutletContext } from "react-router-dom";
 import ForecastTable from "../features/forecast/components/layout/ForecastTable";
 import StrongestWindCard from "../features/forecast/components/layout/StrongestWindCard";
 import WeeklyRainCard from "../features/forecast/components/layout/WeeklyRainCard";
 import WeeklySummaryCard from "../features/forecast/components/layout/WeeklySummaryCard";
 
+
 export default function ForecastPage() {
+    const { weather } = useOutletContext<any>();
+
     return (
         <section className="mx-6">
-            <ForecastTable />
+            <ForecastTable data={weather.weekly}/>
             <WeeklySummaryCard />
-            <WeeklyRainCard />
+            <WeeklyRainCard data={weather.weekly}/>
             <StrongestWindCard />
         </section>
     )

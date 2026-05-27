@@ -2,14 +2,14 @@ import { ChevronRight } from "lucide-react";
 import type { weeklyForecastItemProps } from "../../../../types/weeklyForecastItemProps";
 
 export default function WeeklyForecastItem({ data }: weeklyForecastItemProps) {
-  const { day, icon: Icon, maxTemp, minTemp } = data;
+  const { day, icon, maxTemp, minTemp } = data;
 
   return (
     <li className="flex items-center justify-between py-1 text-[11px]">
       <p>{day}</p>
 
-      <div className="flex items-center gap-3">
-        <Icon className="w-6 text-amber-300" />
+      <div className="flex justify-between items-center gap-3">
+        <img src={icon} alt="" className="w-7" />
 
         <p>{maxTemp}°</p>
 

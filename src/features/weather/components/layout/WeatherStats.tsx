@@ -1,31 +1,33 @@
 import { Droplets, Sun, Sunset, Wind } from "lucide-react";
 import type { WeatherStatsType } from "../../../../types/WeatherStatsTypes";
 import WeatherStatsItem from "../ui/WeatherStatsItem";
+import type { WeatherHeroProps } from "../../../../types/WeatherHeroProps";
+import type { WeatherDetailsCardProps } from "../../../../types/WeatherDetailsCardProps";
 
-export default function WeatherStats() {
+export default function WeatherStats({ data }: WeatherDetailsCardProps) {
   const weatherStats: WeatherStatsType[] = [
     {
       icon: Droplets,
       label: "Wilgotność",
-      value: `55%`,
+      value: `${data.humidity}%`,
       color: "text-sky-300",
     },
     {
       icon: Wind,
       label: "Wiatr",
-      value: `15 km/h`,
+      value: `${data.wind} km/h`,
       color: "text-sky-300",
     },
     {
       icon: Sun,
       label: "Indeks UV",
-      value: "3",
+      value: `${data.uv}`,
       color: "text-amber-300",
     },
     {
       icon: Sunset,
       label: "Zachód",
-      value: "20:45",
+      value: `${data.sunset}`,
       color: "text-amber-300",
     },
   ];

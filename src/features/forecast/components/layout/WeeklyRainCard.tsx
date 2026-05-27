@@ -51,7 +51,7 @@ export default function WeeklyRainCard() {
         </p>
       </div>
 
-      <div className="mt-5 flex items-end justify-between gap-2">
+      <div className="mt-5 flex items-end justify-between mx-4">
         {rainData.map((item) => {
           const isActive = item.value === maxRain;
           const height = item.value === 0 ? 8 : 18 + item.value * 18;

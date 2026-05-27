@@ -6,14 +6,20 @@ import WeatherInfoCard from "../features/weather/components/layout/WeatherInfoCa
 import WeeklyForecast from "../features/weather/components/layout/WeeklyForecast";
 import TemperatureChart from "../features/weather/components/layout/TemperatureChart";
 import PrecipitationChart from "../features/weather/components/layout/PrecipitationChart";
+import { useOutletContext } from "react-router-dom";
+
 
 export default function HomePage() {
+  const { weather } = useOutletContext<any>();
+
+  console.log(weather);
+
   return (
     <section className="2xl:grid grid-cols-5">
       <div className="col-span-4 lg:mx-6">
-        <WeatherHero />
-        <HourlyForecast />
-        <WeeklyForecast />
+        <WeatherHero data={weather.current}/>
+        <HourlyForecast data={weather.hourly}/>
+        <WeeklyForecast data={weather.weekly}/>
         <div className="hidden lg:flex gap-4">
           <TemperatureChart />
           <PrecipitationChart />

@@ -53,7 +53,7 @@ export default function StrongestWindCard() {
         </p>
       </div>
 
-      <div className="mt-5 flex items-end justify-between gap-2">
+      <div className="mt-5 flex items-end justify-between mx-4">
         {windData.map((item) => {
           const isActive =
             item.speed === strongestWind;

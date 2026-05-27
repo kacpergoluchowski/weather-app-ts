@@ -1,9 +1,7 @@
 import { ChevronRight } from "lucide-react";
-
 import WeeklyForecastItem from "../ui/WeeklyForecastItem";
-import { weeklyForecastMockData } from "../../data/weeklyForecastMockData";
 
-export default function WeeklyForecast() {
+export default function WeeklyForecast({ data = []}) {
   return (
     <section className="mx-6 mt-4 h-min rounded-2xl px-4 py-2 shadow-xl lg:hidden">
       <div className="mb-3 flex justify-between">
@@ -23,7 +21,7 @@ export default function WeeklyForecast() {
       </div>
 
       <ul>
-        {weeklyForecastMockData.map((item) => (
+        {data.map((item) => (
           <WeeklyForecastItem key={item.id} data={item} />
         ))}
       </ul>

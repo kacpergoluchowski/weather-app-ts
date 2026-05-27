@@ -1,4 +1,4 @@
-export type HourlyForecastItemProps = {
+export type HourlyForecastProps = {
   data: {
     id: number;
     hour: string;
@@ -6,5 +6,5 @@ export type HourlyForecastItemProps = {
     img: string;
     alt: string;
     rainChance: number;
-  };
+  }[];
 };
