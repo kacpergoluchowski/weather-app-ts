@@ -1,9 +1,14 @@
 import { ChevronRight } from "lucide-react";
 import WeeklyForecastItem from "../ui/WeeklyForecastItem";
+import type { WeeklyForecastItemType } from "../../../../types/WeeklyForecastItemType";
 
-export default function WeeklyForecast({ data = []}) {
+type WeeklyForecastProps = {
+  data?: WeeklyForecastItemType[];
+};
+
+export default function WeeklyForecast({ data = [] }: WeeklyForecastProps) {
   return (
-    <section className="mx-6 mt-4 h-min rounded-2xl px-4 py-2 shadow-xl lg:hidden">
+    <section className="mx-6 mt-4 rounded-2xl px-4 py-2 shadow-xl lg:hidden">
       <div className="mb-3 flex justify-between">
         <h2 className="text-[10px] font-semibold">Prognoza na 7 dni</h2>
 

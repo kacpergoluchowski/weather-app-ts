@@ -21,7 +21,12 @@ export default function WeatherHero({ data }: WeatherHeroProps) {
           Odczuwalna {data.feelsLike}°
         </p>
         <div className="mx-auto -mt-5 xl:-mt-10">
-          <WeatherStats data={data}/>
+          <WeatherStats data={{
+            humidity: data.humidity,
+            wind: data.wind,
+            uv: data.uv,
+            sunset: data.sunset
+          }}/>
         </div>
       </div>
     </section>

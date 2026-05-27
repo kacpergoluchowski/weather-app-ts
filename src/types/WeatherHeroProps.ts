@@ -5,5 +5,9 @@ export type WeatherHeroProps = {
     feelsLike: number;
     description: string;
     icon: string;
+    humidity: number;
+    wind: number;
+    uv: number;
+    sunset: string;
   };
 };

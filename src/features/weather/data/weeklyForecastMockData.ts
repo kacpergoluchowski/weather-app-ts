@@ -1,6 +1,15 @@
-import { CloudRain, CloudSun, Sun } from "lucide-react";
+import { CloudRain, CloudSun, Sun, type LucideIcon } from "lucide-react";
 
-export const weeklyForecastMockData = [
+export type WeeklyForecastItemType = {
+  id: number;
+  day: string;
+  icon: LucideIcon;
+  alt: string,
+  maxTemp: number;
+  minTemp: number;
+};
+
+export const weeklyForecastMockData: WeeklyForecastItemType[] = [
   {
     id: 1,
     day: "Poniedziałek",

@@ -1,7 +1,6 @@
 import { Droplets, Sun, Sunset, Wind } from "lucide-react";
 import type { WeatherStatsType } from "../../../../types/WeatherStatsTypes";
 import WeatherStatsItem from "../ui/WeatherStatsItem";
-import type { WeatherHeroProps } from "../../../../types/WeatherHeroProps";
 import type { WeatherDetailsCardProps } from "../../../../types/WeatherDetailsCardProps";
 
 export default function WeatherStats({ data }: WeatherDetailsCardProps) {

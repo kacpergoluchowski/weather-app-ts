@@ -1,6 +1,7 @@
 import { ChevronRight, Droplet, Wind } from "lucide-react";
+import type { ForecastTableProps } from "../../../../types/ForecastTableProps";
 
-export default function ForecastTable({ data = [] }) {
+export default function ForecastTable({ data = [] }: ForecastTableProps) {
   return (
     <section className="mx-auto mt-3 rounded-3xl border border-gray-100 bg-white p-5 shadow-sm">
       <div className="mb-4 flex items-center justify-between">

@@ -1,15 +1,14 @@
 import { CloudRain } from "lucide-react";
 
-export default function WeeklyRainCard() {
-  const rainData = [
-    { day: "Pn", value: 0.2 },
-    { day: "Wt", value: 0 },
-    { day: "Śr", value: 2.4 },
-    { day: "Cz", value: 0.1 },
-    { day: "Pt", value: 1.2 },
-    { day: "So", value: 0 },
-    { day: "Nd", value: 0.4 },
-  ];
+type WeeklyRainCardProps = {
+  data?: any[];
+};
+
+export default function WeeklyRainCard({ data = [] }: WeeklyRainCardProps) {
+  const rainData = data.map((day) => ({
+  day: 'test',
+  value: day.precipitation,
+}));
 
   const maxRain = Math.max(...rainData.map((item) => item.value));
 
