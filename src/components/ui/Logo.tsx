@@ -1,10 +1,16 @@
-import logoIcon from '../../assets/images/logoIcon.png';
+import { Link } from "react-router-dom";
+import logoIcon from "../../assets/images/logoIcon.png";
 
 export default function Logo() {
-    return (
-        <div className='flex justify-center items-center gap-3 text-[clamp(1.5rem,1vw+0.6rem,1.875rem)]'>
-            <img src={logoIcon} alt="" className='w-13'/>
-            <h1> Pogoda </h1>
-        </div>
-    )
+  return (
+    <Link
+      to="/"
+      aria-label="Przejdź do strony głównej"
+      className="flex items-center justify-center gap-3 text-[clamp(1.5rem,1vw+0.6rem,1.875rem)] font-semibold"
+    >
+      <img src={logoIcon} alt="Logo aplikacji Pogoda" className="w-12" />
+
+      <span>Pogoda</span>
+    </Link>
+  );
 }
