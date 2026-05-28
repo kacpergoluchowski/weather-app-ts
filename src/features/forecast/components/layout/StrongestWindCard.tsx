@@ -1,19 +1,23 @@
+import clsx from "clsx";
 import { Wind } from "lucide-react";
+import type { StrongestWindCardProps } from "../../../../types/StrongestWindCardProps";
 
-export default function StrongestWindCard() {
-  const windData = [
-    { day: "Pn", speed: 12 },
-    { day: "Wt", speed: 15 },
-    { day: "Śr", speed: 20 },
-    { day: "Cz", speed: 17 },
-    { day: "Pt", speed: 14 },
-    { day: "So", speed: 10 },
-    { day: "Nd", speed: 13 },
-  ];
 
+const BAR_HEIGHT_MULTIPLIER = 3;
+
+export default function StrongestWindCard({
+  data = [],
+}: StrongestWindCardProps) {
   const strongestWind = Math.max(
-    ...windData.map((item) => item.speed),
+    ...data.map((item) => item.wind),
+    0
   );
+
+  const strongestWindDay = data.find(
+    (item) => item.wind === strongestWind
+  );
+
+  console.log(data);
 
   return (
     <section className="mx-auto mt-3 rounded-3xl border border-gray-100 bg-white p-5 shadow-sm">
@@ -21,9 +25,8 @@ export default function StrongestWindCard() {
         <div className="flex items-center gap-3">
           <div className="flex size-11 items-center justify-center rounded-2xl bg-sky-50">
             <Wind
-              size={22}
+              className="size-[22px] text-sky-500"
               aria-hidden="true"
-              className="text-sky-500"
             />
           </div>
 
@@ -35,12 +38,12 @@ export default function StrongestWindCard() {
 
       <div className="rounded-3xl bg-green-400/10 p-4">
         <p className="text-base font-semibold text-green-500">
-          Środa
+          {strongestWindDay?.day}
         </p>
 
         <div className="mt-2 flex items-end gap-1">
           <span className="text-5xl font-bold text-slate-950">
-            20
+            {strongestWind}
           </span>
 
           <span className="text-lg text-slate-600">
@@ -53,12 +56,13 @@ export default function StrongestWindCard() {
         </p>
       </div>
 
-      <div className="mt-5 flex items-end justify-between mx-4">
-        {windData.map((item) => {
+      <div className="mx-4 mt-5 flex items-end justify-between">
+        {data.map((item) => {
           const isActive =
-            item.speed === strongestWind;
+            item.wind === strongestWind;
 
-          const height = item.speed * 3;
+          const height =
+            item.wind * BAR_HEIGHT_MULTIPLIER;
 
           return (
             <div
@@ -66,22 +70,24 @@ export default function StrongestWindCard() {
               className="flex flex-col items-center gap-2"
             >
               <p
-                className={`text-xs font-medium ${
+                className={clsx(
+                  "text-xs font-medium",
                   isActive
                     ? "text-green-600"
                     : "text-slate-500"
-                }`}
+                )}
               >
                 {item.day}
               </p>
 
               <div className="flex h-20 items-end">
                 <div
-                  className={`w-4 rounded-full ${
+                  className={clsx(
+                    "w-4 rounded-full",
                     isActive
                       ? "bg-green-500"
                       : "bg-green-200"
-                  }`}
+                  )}
                   style={{
                     height: `${height}px`,
                   }}
@@ -89,13 +95,14 @@ export default function StrongestWindCard() {
               </div>
 
               <p
-                className={`text-[10px] font-medium ${
+                className={clsx(
+                  "text-[10px] font-medium",
                   isActive
                     ? "text-sky-600"
                     : "text-slate-500"
-                }`}
+                )}
               >
-                {item.speed}
+                {item.wind}
               </p>
             </div>
           );
