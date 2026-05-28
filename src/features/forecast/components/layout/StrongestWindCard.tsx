@@ -40,7 +40,7 @@ export default function StrongestWindCard({
 
       <div className="rounded-3xl bg-green-400/10 p-4">
         <p className="text-base font-semibold text-green-500">
-          {getDayName(strongestWindDay?.day)}
+          {strongestWindDay ? getDayName(strongestWindDay.day) : "-"}
         </p>
 
         <div className="mt-2 flex items-end gap-1">

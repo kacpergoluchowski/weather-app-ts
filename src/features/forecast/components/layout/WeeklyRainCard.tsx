@@ -31,7 +31,7 @@ export default function WeeklyRainCard({ data = [] }: WeeklyRainCardProps) {
 
       <div className="rounded-3xl bg-blue-50/70 p-4">
         <p className="text-base font-semibold text-blue-600">
-          {getDayName(rainiestDay?.day) ?? "-"}
+          {rainiestDay ? getDayName(rainiestDay.day) : "-"}
         </p>
 
         <div className="mt-2 flex items-end gap-1">

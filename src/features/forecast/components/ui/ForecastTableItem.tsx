@@ -3,12 +3,10 @@ import { ChevronRight, Droplet, Wind } from "lucide-react";
 import { getWeatherIconUrl } from "../../../weather/utils/getWeatherIconUrl";
 import type { ForecastTableItemProps } from "../../../../types/forecast/ForecastTableItemProps";
 import { getDayName } from "../../../../utils/getDayName";
-import { getShortDayName } from "../../../../utils/getShortDayName";
 
 export default function ForecastTableItem({ data }: ForecastTableItemProps) {
   const {
     day,
-    date,
     icon,
     description,
     maxTemp,
