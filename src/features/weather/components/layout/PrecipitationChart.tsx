@@ -1,7 +1,7 @@
 import { Bar, BarChart, ResponsiveContainer, XAxis } from "recharts";
 import { precipitationChartMockData } from "../../data/precipitationChartMockData";
 
-const chartTickStyle = {
+const xAxisTickStyle = {
   fill: "#64748b",
   fontSize: 12,
   fontWeight: 500,
@@ -36,7 +36,7 @@ export default function PrecipitationChart() {
               dataKey="time"
               axisLine={false}
               tickLine={false}
-              tick={chartTickStyle}
+              tick={xAxisTickStyle}
               tickMargin={15}
             />
 

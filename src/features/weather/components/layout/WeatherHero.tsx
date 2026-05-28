@@ -2,6 +2,13 @@ import type { WeatherHeroProps } from "../../../../types/WeatherHeroProps";
 import WeatherStats from "./WeatherStats";
 
 export default function WeatherHero({ data }: WeatherHeroProps) {
+  const weatherStatsData = {
+    humidity: data.humidity,
+    wind: data.wind,
+    uv: data.uv,
+    sunset: data.sunset,
+  };
+
   return (
     <section
       aria-label="Aktualna pogoda"
@@ -10,9 +17,9 @@ export default function WeatherHero({ data }: WeatherHeroProps) {
         backgroundImage: "url(/weather-backgrounds/sunny.png)",
       }}
     >
-      <div className="px-6 py-22 lg:pt-8 lg:px-12">
+      <div className="px-6 py-22 lg:px-12 lg:pt-8">
         <h1 className="flex items-center gap-2 text-7xl font-medium xl:text-8xl">
-          {data.temperature}° 
+          {data.temperature}°
         </h1>
 
         <p className="mt-2 font-medium lg:text-2xl">{data.description}</p>
@@ -20,13 +27,9 @@ export default function WeatherHero({ data }: WeatherHeroProps) {
         <p className="text-gray-600 xl:mt-1 xl:text-xl">
           Odczuwalna {data.feelsLike}°
         </p>
+
         <div className="mx-auto -mt-5 xl:-mt-10">
-          <WeatherStats data={{
-            humidity: data.humidity,
-            wind: data.wind,
-            uv: data.uv,
-            sunset: data.sunset
-          }}/>
+          <WeatherStats data={weatherStatsData} />
         </div>
       </div>
     </section>

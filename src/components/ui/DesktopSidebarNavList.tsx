@@ -1,4 +1,4 @@
-import { navItems } from "../../data/mobileNavItems";
+import { navItems } from "../../data/desktopSidebarNavItems";
 import DesktopSidebarNavItem from "./DesktopSidebarNavItem";
 
 export default function DesktopSidebarNavList() {
