@@ -1,4 +1,4 @@
-import type { ForecastTableItemData } from "./ForecastTableItemData";
+import type { ForecastTableItemData } from "../forecast/ForecastTableItemData";
 
 export type ForecastPageContext = {
   weather: {

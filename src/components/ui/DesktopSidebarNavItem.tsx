@@ -1,6 +1,7 @@
 import clsx from "clsx";
 import { NavLink } from "react-router-dom";
-import type { DesktopSidebarNavItemProps } from "../../types/DesktopSidebarNavItemProps";
+import type { DesktopSidebarNavItemProps } from "../../types/navigation/DesktopSidebarNavItemProps";
+
 
 export default function DesktopSidebarNavItem({
   icon: Icon,

@@ -1,4 +1,4 @@
-import type { WeatherHeroProps } from "../../../../types/WeatherHeroProps";
+import type { WeatherHeroProps } from "../../../../types/weather/WeatherHeroProps";
 import WeatherStats from "./WeatherStats";
 
 export default function WeatherHero({ data }: WeatherHeroProps) {

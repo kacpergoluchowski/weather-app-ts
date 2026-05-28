@@ -1,5 +1,5 @@
 import { Info } from "lucide-react";
-import type { AirQualityCardProps } from "../../../../types/AirQualityCardProps";
+import type { AirQualityCardProps } from "../../../../types/weather/AirQualityCardProps";
 
 export default function AirQualityCard({ data }: AirQualityCardProps) {
   return (

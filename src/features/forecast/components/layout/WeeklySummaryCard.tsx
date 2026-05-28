@@ -1,6 +1,6 @@
 import { ChartNoAxesColumn, Thermometer } from "lucide-react";
 
-import type { WeeklySummaryCardProps } from "../../../../types/WeeklySummaryCardProps";
+import type { WeeklySummaryCardProps } from "../../../../types/forecast/WeeklySummaryCardProps";
 
 export default function WeeklySummaryCard({ data }: WeeklySummaryCardProps) {
   return (

@@ -9,8 +9,8 @@ import TemperatureChart from "../features/weather/components/layout/TemperatureC
 import PrecipitationChart from "../features/weather/components/layout/PrecipitationChart";
 
 import { getAirQualityStatus } from "../utils/getAirQualityStatus";
+import type { HomePageContext } from "../types/context/HomePageContext";
 
-import type { HomePageContext } from "../types/HomePageContext";
 
 export default function HomePage() {
   const { weather } = useOutletContext<HomePageContext>();

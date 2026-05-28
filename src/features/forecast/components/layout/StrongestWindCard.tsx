@@ -1,6 +1,6 @@
 import clsx from "clsx";
 import { Wind } from "lucide-react";
-import type { StrongestWindCardProps } from "../../../../types/StrongestWindCardProps";
+import type { StrongestWindCardProps } from "../../../../types/forecast/StrongestWindCardProps";
 
 
 const BAR_HEIGHT_MULTIPLIER = 3;

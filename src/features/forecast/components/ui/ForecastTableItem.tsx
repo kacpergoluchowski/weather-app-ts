@@ -1,7 +1,7 @@
 import { ChevronRight, Droplet, Wind } from "lucide-react";
 
 import { getWeatherIconUrl } from "../../../weather/utils/getWeatherIconUrl";
-import type { ForecastTableItemProps } from "../../../../types/ForecastTableItemProps";
+import type { ForecastTableItemProps } from "../../../../types/forecast/ForecastTableItemProps";
 
 export default function ForecastTableItem({ data }: ForecastTableItemProps) {
   const {

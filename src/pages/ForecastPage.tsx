@@ -4,7 +4,8 @@ import StrongestWindCard from "../features/forecast/components/layout/StrongestW
 import WeeklyRainCard from "../features/forecast/components/layout/WeeklyRainCard";
 import WeeklySummaryCard from "../features/forecast/components/layout/WeeklySummaryCard";
 import { getWeeklySummary } from "../utils/getWeeklySummary";
-import type { ForecastPageContext } from "../types/ForecastPageContext";
+import type { ForecastPageContext } from "../types/context/ForecastPageContext";
+
 
 
 export default function ForecastPage() {

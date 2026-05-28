@@ -1,5 +1,5 @@
 import clsx from "clsx";
-import type { WeatherStatsItemProps } from "../../../../types/WeatherStatsItemProps";
+import type { WeatherStatsItemProps } from "../../../../types/weather/WeatherStatsItemProps";
 
 export default function WeatherStatsItem({ data }: WeatherStatsItemProps) {
   const { icon: Icon, label, value, color } = data;

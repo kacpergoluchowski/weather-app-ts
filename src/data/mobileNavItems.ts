@@ -1,5 +1,5 @@
 import { Calendar, House, Radar, Settings, Wind } from "lucide-react";
-import type { MobileNavItem } from "../types/MobileNavItem";
+import type { MobileNavItem } from "../types/navigation/MobileNavItem";
 
 export const navItems: MobileNavItem[] = [
   {

@@ -1,7 +1,7 @@
 import { ChevronRight } from "lucide-react";
 import ForecastTableItem from "../ui/ForecastTableItem";
+import type { ForecastTableProps } from "../../../../types/forecast/ForecastTableProps";
 
-import type { ForecastTableProps } from "../../../../types/ForecastTableProps";
 
 export default function ForecastTable({
   data = [],

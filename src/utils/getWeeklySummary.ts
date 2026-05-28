@@ -1,4 +1,4 @@
-import type { ForecastTableItemData } from "../types/ForecastTableItemData";
+import type { ForecastTableItemData } from "../types/forecast/ForecastTableItemData";
 
 export function getWeeklySummary(data: ForecastTableItemData[]) {
   const maxTempDay = data.reduce((max, day) =>

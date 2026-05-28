@@ -1,5 +1,5 @@
 import { Calendar, Heart, House, Radar, Settings, Wind } from "lucide-react";
-import type { NavItem } from "../types/NavItem";
+import type { NavItem } from "../types/navigation/NavItem";
 
 export const navItems: NavItem[] = [
   { id: 0, icon: House, label: "Dzisiaj", path: "/" },

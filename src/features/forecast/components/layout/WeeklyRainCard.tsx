@@ -1,7 +1,7 @@
 import clsx from "clsx";
 import { CloudRain } from "lucide-react";
 
-import type { WeeklyRainCardProps } from "../../../../types/WeeklyRainCardProps";
+import type { WeeklyRainCardProps } from "../../../../types/forecast/WeeklyRainCardProps";
 
 const MIN_BAR_HEIGHT = 8;
 const BASE_BAR_HEIGHT = 18;

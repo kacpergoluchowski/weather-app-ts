@@ -1,4 +1,4 @@
-import type { WeatherInfoCardProps } from "../../../../types/WeatherInfoCardProps";
+import type { WeatherInfoCardProps } from "../../../../types/weather/WeatherInfoCardProps";
 
 export default function WeatherInfoCard({
   title,
