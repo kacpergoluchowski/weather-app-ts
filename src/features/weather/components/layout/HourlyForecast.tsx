@@ -7,10 +7,8 @@ import type { HourlyForecastProps } from "../../../../types/HourlyForecastProps"
 const SCROLL_AMOUNT = 250;
 
 export default function HourlyForecast({ data = [] }: HourlyForecastProps) {
-  const { scrollRef, scrollState, canOverflow, scrollByAmount } = useHorizontalScroll<HTMLUListElement>();
-
-  const canScrollLeft = canOverflow && scrollState !== "start";
-  const canScrollRight = canOverflow && scrollState !== "end";
+  const { scrollRef, canScrollLeft, canScrollRight, scrollByAmount } =
+    useHorizontalScroll<HTMLUListElement>();
 
   return (
     <section className="mx-6 mt-8 rounded-2xl px-4 py-2 shadow-xl lg:mx-0 lg:mt-2">

@@ -1,6 +1,6 @@
 export type StrongestWindCardData = {
   day: string;
-  speed: number;
+  wind: number;
 };
 
 export type StrongestWindCardProps = {
