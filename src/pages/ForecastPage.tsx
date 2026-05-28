@@ -6,8 +6,6 @@ import WeeklySummaryCard from "../features/forecast/components/layout/WeeklySumm
 import { getWeeklySummary } from "../utils/getWeeklySummary";
 import type { ForecastPageContext } from "../types/context/ForecastPageContext";
 
-
-
 export default function ForecastPage() {
   const { weather } = useOutletContext<ForecastPageContext>();
 
@@ -18,8 +16,10 @@ export default function ForecastPage() {
     <section className="mx-6">
       <ForecastTable data={weeklyData} />
       <WeeklySummaryCard data={weeklySummaryData} />
-      <WeeklyRainCard data={weeklyData} />
-      <StrongestWindCard data={weeklyData} />
+      <div className="lg:flex gap-3">
+        <WeeklyRainCard data={weeklyData} />
+        <StrongestWindCard data={weeklyData} />
+      </div>
     </section>
   );
 }

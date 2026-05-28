@@ -1,6 +1,7 @@
 import { ChartNoAxesColumn, Thermometer } from "lucide-react";
 
 import type { WeeklySummaryCardProps } from "../../../../types/forecast/WeeklySummaryCardProps";
+import { getDayName } from "../../../../utils/getDayName";
 
 export default function WeeklySummaryCard({ data }: WeeklySummaryCardProps) {
   return (
@@ -23,7 +24,7 @@ export default function WeeklySummaryCard({ data }: WeeklySummaryCardProps) {
 
         <p className="mt-3 text-sm leading-6 text-slate-600">
           Najwyższa temperatura w tym tygodniu to {data.maxTemp}° w{" "}
-          {data.maxTempDay}, a najniższa {data.minTemp}° w {data.minTempDay}.
+          {getDayName(data.maxTempDay)}, a najniższa {data.minTemp}° w {getDayName(data.minTempDay)}.
         </p>
       </div>
 

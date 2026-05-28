@@ -3,7 +3,7 @@ import type { AirQualityCardProps } from "../../../../types/weather/AirQualityCa
 
 export default function AirQualityCard({ data }: AirQualityCardProps) {
   return (
-    <section className="rounded-3xl border border-gray-100 bg-white p-5 shadow-sm">
+    <section className="rounded-3xl border border-gray-100 bg-white p-5 shadow-sm w-1/2 2xl:w-full">
       <div className="mb-6 flex items-center justify-between">
         <h2 className="text-lg font-semibold text-slate-950">
           Jakość powietrza

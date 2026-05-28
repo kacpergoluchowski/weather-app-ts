@@ -53,7 +53,7 @@ export default function AppLayout() {
       <DesktopSidebar />
 
       <div className="w-full xl:w-5/6">
-        <Header title={headerData.title} subtitle={headerData.subtitle} />
+        <Header title={headerData.title} subtitle={headerData.subtitle} onCityChange={setCity}/>
 
         <Outlet context={outletContext} />
       </div>

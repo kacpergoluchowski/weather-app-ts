@@ -1,6 +1,8 @@
 import clsx from "clsx";
 import { Wind } from "lucide-react";
 import type { StrongestWindCardProps } from "../../../../types/forecast/StrongestWindCardProps";
+import { getDayName } from "../../../../utils/getDayName";
+import { getShortDayName } from "../../../../utils/getShortDayName";
 
 
 const BAR_HEIGHT_MULTIPLIER = 3;
@@ -20,7 +22,7 @@ export default function StrongestWindCard({
   console.log(data);
 
   return (
-    <section className="mx-auto mt-3 rounded-3xl border border-gray-100 bg-white p-5 shadow-sm">
+    <section className="mx-auto mt-3 rounded-3xl border border-gray-100 bg-white p-5 shadow-sm lg:w-1/2">
       <div className="mb-5 flex items-center justify-between">
         <div className="flex items-center gap-3">
           <div className="flex size-11 items-center justify-center rounded-2xl bg-sky-50">
@@ -38,7 +40,7 @@ export default function StrongestWindCard({
 
       <div className="rounded-3xl bg-green-400/10 p-4">
         <p className="text-base font-semibold text-green-500">
-          {strongestWindDay?.day}
+          {getDayName(strongestWindDay?.day)}
         </p>
 
         <div className="mt-2 flex items-end gap-1">
@@ -77,7 +79,7 @@ export default function StrongestWindCard({
                     : "text-slate-500"
                 )}
               >
-                {item.day}
+                {getShortDayName(item.day)}
               </p>
 
               <div className="flex h-20 items-end">

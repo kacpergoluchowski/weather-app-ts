@@ -2,6 +2,8 @@ import { ChevronRight, Droplet, Wind } from "lucide-react";
 
 import { getWeatherIconUrl } from "../../../weather/utils/getWeatherIconUrl";
 import type { ForecastTableItemProps } from "../../../../types/forecast/ForecastTableItemProps";
+import { getDayName } from "../../../../utils/getDayName";
+import { getShortDayName } from "../../../../utils/getShortDayName";
 
 export default function ForecastTableItem({ data }: ForecastTableItemProps) {
   const {
@@ -18,13 +20,13 @@ export default function ForecastTableItem({ data }: ForecastTableItemProps) {
   const iconSrc = getWeatherIconUrl(icon);
 
   return (
-    <li className="grid grid-cols-[auto_1fr_auto] items-center gap-3 py-3">
-      <div>
-        <p className="text-sm font-semibold text-slate-950">{day}</p>
-        <p className="text-[10px] text-slate-500">{date}</p>
+    <li className="flex sm:grid sm:grid-cols-[auto_1fr_auto] items-center gap-3 py-3">
+      <div className="w-full">
+        <p className="text-sm font-semibold text-slate-950">{getDayName(day)}</p>
+        <p className="text-[10px] text-slate-500">{day}</p>
       </div>
 
-      <div className="flex min-w-0 items-center justify-center gap-3">
+      <div className="flex w-3/4 items-center justify-center gap-3">
         <img
           src={iconSrc}
           alt={description}
@@ -37,11 +39,10 @@ export default function ForecastTableItem({ data }: ForecastTableItemProps) {
             {maxTemp}°<span className="text-blue-500"> / {minTemp}°</span>
           </p>
 
-          <p className="truncate text-[10px] text-slate-500">{description}</p>
         </div>
       </div>
 
-      <div className="flex items-center gap-4">
+      <div className="hidden sm:flex items-center gap-4">
         <div className="flex flex-col gap-1">
           <p className="flex items-center gap-1 text-[10px] text-slate-600">
             <Droplet className="size-[11px]" aria-hidden="true" />
@@ -60,8 +61,9 @@ export default function ForecastTableItem({ data }: ForecastTableItemProps) {
           className="text-slate-400"
         >
           <ChevronRight className="size-3" aria-hidden="true" />
-        </button>
+        </button>        
       </div>
+      <ChevronRight className="size-3 sm:hidden"/>
     </li>
   );
 }

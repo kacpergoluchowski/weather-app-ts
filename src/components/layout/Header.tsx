@@ -6,7 +6,7 @@ import clsx from "clsx";
 import type { HeaderProps } from "../../types/HeaderProps";
 import MobileHeaderSearch from "../ui/MobileHeaderSearch";
 
-export default function Header({ title, subtitle }: HeaderProps) {
+export default function Header({ title, subtitle, onCityChange }: HeaderProps) {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const { pathname } = useLocation();
 
@@ -49,6 +49,7 @@ export default function Header({ title, subtitle }: HeaderProps) {
         isOpen={isSearchOpen}
         onOpen={() => setIsSearchOpen(true)}
         onClose={() => setIsSearchOpen(false)}
+        onCityChange={onCityChange}
       />
     </header>
   );

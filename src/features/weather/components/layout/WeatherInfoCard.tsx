@@ -7,7 +7,7 @@ export default function WeatherInfoCard({
   description,
 }: WeatherInfoCardProps) {
   return (
-    <section className="rounded-3xl border border-slate-200 bg-white p-5 shadow-sm transition-shadow duration-300 hover:shadow-md">
+    <section className="rounded-3xl border border-slate-200 bg-white p-5 shadow-sm transition-shadow duration-300 hover:shadow-md w-1/3 2xl:w-full my-2">
       <div className="mb-6 flex items-center justify-between">
         <h2 className="text-lg font-semibold text-slate-950">{title}</h2>
 
