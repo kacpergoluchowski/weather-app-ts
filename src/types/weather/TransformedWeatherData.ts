@@ -5,7 +5,7 @@ export type TransformedWeatherData = {
     temperature: number;
     feelsLike: number;
     description: string;
-    icon: string,
+    icon: string;
     humidity: number;
     wind: number;
     uv: number;
@@ -25,7 +25,7 @@ export type TransformedWeatherData = {
     img: string;
     alt: string;
     temp: number;
-    rainChance: number
+    rainChance: number;
   }[];
 
   weekly: {
@@ -39,4 +39,16 @@ export type TransformedWeatherData = {
     precipitation: number;
     wind: number;
   }[];
+
+  charts: {
+    temperature: {
+      time: string;
+      temperature: number;
+    }[];
+
+    precipitation: {
+      time: string;
+      precipitation: number;
+    }[];
+  };
 };

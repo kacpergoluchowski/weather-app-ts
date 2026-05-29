@@ -1,5 +1,13 @@
 import { Bar, BarChart, ResponsiveContainer, XAxis } from "recharts";
-import { precipitationChartMockData } from "../../data/precipitationChartMockData";
+
+type PrecipitationChartData = {
+  time: string;
+  precipitation: number;
+};
+
+type PrecipitationChartProps = {
+  data: PrecipitationChartData[];
+};
 
 const xAxisTickStyle = {
   fill: "#64748b",
@@ -7,7 +15,8 @@ const xAxisTickStyle = {
   fontWeight: 500,
 };
 
-export default function PrecipitationChart() {
+export default function PrecipitationChart({ data }: PrecipitationChartProps) {
+  console.log(data);
   return (
     <section
       aria-label="Wykres opadów godzinowych"
@@ -23,11 +32,10 @@ export default function PrecipitationChart() {
         className="h-40 w-full"
       >
         <ResponsiveContainer width="100%" height="100%">
-          <BarChart data={precipitationChartMockData}>
+          <BarChart data={data}>
             <defs>
               <linearGradient id="barGradient" x1="0" y1="0" x2="0" y2="1">
                 <stop offset="0%" stopColor="#7CB8FF" />
-
                 <stop offset="100%" stopColor="#355CFF" />
               </linearGradient>
             </defs>

@@ -6,7 +6,15 @@ import {
   XAxis,
   YAxis,
 } from "recharts";
-import { temperatureChartMockData } from "../../data/temperatureChartMockData";
+
+type TemperatureChartData = {
+  time: string;
+  temperature: number;
+};
+
+type TemperatureChartProps = {
+  data: TemperatureChartData[];
+};
 
 const temperatureDotStyle = {
   r: 4,
@@ -27,7 +35,7 @@ const activeTemperatureDotStyle = {
   strokeWidth: 2,
 };
 
-export default function TemperatureChart() {
+export default function TemperatureChart({ data }: TemperatureChartProps) {
   return (
     <section
       aria-label="Wykres temperatury godzinowej"
@@ -53,7 +61,7 @@ export default function TemperatureChart() {
       >
         <ResponsiveContainer width="100%" height="100%">
           <AreaChart
-            data={temperatureChartMockData}
+            data={data}
             margin={{ top: 20, right: 10, left: 10, bottom: 0 }}
           >
             <defs>
@@ -77,7 +85,7 @@ export default function TemperatureChart() {
               dy={10}
             />
 
-            <YAxis hide domain={[15, 25]} />
+            <YAxis hide />
 
             <Tooltip
               formatter={(value) => [`${value}°C`, "Temperatura"]}

@@ -1,4 +1,6 @@
 import type { WeatherHeroProps } from "../../../../types/weather/WeatherHeroProps";
+import { getWeatherBackground } from "../../../../utils/getWeatherBackground";
+
 import WeatherStats from "./WeatherStats";
 
 export default function WeatherHero({ data }: WeatherHeroProps) {
@@ -9,12 +11,14 @@ export default function WeatherHero({ data }: WeatherHeroProps) {
     sunset: data.sunset,
   };
 
+  const backgroundImage = getWeatherBackground(data.description);
+
   return (
     <section
       aria-label="Aktualna pogoda"
       className="relative h-75 bg-cover bg-center bg-no-repeat lg:my-2 lg:rounded-4xl lg:border-2 lg:border-gray-100 xl:h-90"
       style={{
-        backgroundImage: "url(/weather-backgrounds/sunny.png)",
+        backgroundImage: `url(${backgroundImage})`,
       }}
     >
       <div className="px-6 py-22 lg:px-12 lg:pt-8">

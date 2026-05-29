@@ -1,4 +1,4 @@
-import { Calendar, House, Radar, Settings, Wind } from "lucide-react";
+import { Calendar, Heart, House, Settings } from "lucide-react";
 import type { MobileNavItem } from "../types/navigation/MobileNavItem";
 
 export const navItems: MobileNavItem[] = [
@@ -16,15 +16,9 @@ export const navItems: MobileNavItem[] = [
   },
   {
     id: 2,
-    icon: Radar,
-    label: "Radar",
-    path: "/radar",
-  },
-  {
-    id: 3,
-    icon: Wind,
-    label: "Jakość",
-    path: "/air-quality",
+    icon: Heart,
+    label: "Ulubione",
+    path: "/favorites",
   },
   {
     id: 4,

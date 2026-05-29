@@ -6,13 +6,15 @@ import DesktopSidebar from "../components/layout/DesktopSidebar";
 import MobileNavbar from "../components/layout/MobileNavbar";
 
 import { useDebounce } from "../hooks/useDebounce";
+import { getHeaderData } from "../utils/getHeaderData";
+
 import { useWeather } from "../features/weather/hooks/useWeather";
 import { transformWeatherData } from "../features/weather/utils/transformWeatherData";
 
 export default function AppLayout() {
   const [searchValue, setSearchValue] = useState("Kielce");
 
-  const debouncedCity = useDebounce(searchValue, 1500);
+  const debouncedCity = useDebounce(searchValue, 500);
 
   const { data, isLoading, isError, error } = useWeather(debouncedCity);
   const { pathname } = useLocation();
@@ -32,8 +34,6 @@ export default function AppLayout() {
     [weather, debouncedCity],
   );
 
-  console.log(weather);
-
   if (isLoading) {
     return <main>Ładowanie...</main>;
   }
@@ -42,17 +42,10 @@ export default function AppLayout() {
     return <main>{error?.message ?? "Nie udało się pobrać pogody."}</main>;
   }
 
-  const isHomePage = pathname === "/";
-
-  const headerData = isHomePage
-    ? {
-        title: weather.current.city,
-        subtitle: "25 maj 2026, 07:48",
-      }
-    : {
-        title: "Prognoza tygodniowa",
-        subtitle: weather.current.city,
-      };
+  const headerData = getHeaderData({
+    pathname,
+    city: weather.current.city,
+  });
 
   return (
     <div className="flex gap-5 pb-22 lg:pb-5 2xl:pb-0">

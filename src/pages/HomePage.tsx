@@ -11,7 +11,6 @@ import PrecipitationChart from "../features/weather/components/layout/Precipitat
 import { getAirQualityStatus } from "../utils/getAirQualityStatus";
 import type { HomePageContext } from "../types/context/HomePageContext";
 
-
 export default function HomePage() {
   const { weather } = useOutletContext<HomePageContext>();
 
@@ -47,6 +46,8 @@ export default function HomePage() {
     },
   ];
 
+  console.log(weather.charts);
+
   return (
     <section className="grid-cols-5 2xl:grid">
       <div className="col-span-4 lg:mx-6">
@@ -57,9 +58,8 @@ export default function HomePage() {
         <WeeklyForecast data={weather.weekly} />
 
         <div className="hidden gap-4 lg:flex">
-          <TemperatureChart />
-
-          <PrecipitationChart />
+          <TemperatureChart data={weather.charts.temperature} />
+          <PrecipitationChart data={weather.charts.precipitation} />
         </div>
       </div>
 
