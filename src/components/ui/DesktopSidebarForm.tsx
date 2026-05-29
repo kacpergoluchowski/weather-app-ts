@@ -1,10 +1,19 @@
 import { Search } from "lucide-react";
 
-export default function DesktopSidebarForm() {
+type DesktopSidebarFormProps = {
+  searchValue: string;
+  onSearchChange: (value: string) => void;
+};
+
+export default function DesktopSidebarForm({
+  searchValue,
+  onSearchChange,
+}: DesktopSidebarFormProps) {
   return (
     <form
       role="search"
       className="relative mx-auto my-6 w-4/5"
+      onSubmit={(e) => e.preventDefault()}
     >
       <label htmlFor="desktop-city-search" className="sr-only">
         Wyszukaj miasto
@@ -19,6 +28,8 @@ export default function DesktopSidebarForm() {
         id="desktop-city-search"
         name="city"
         type="text"
+        value={searchValue}
+        onChange={(e) => onSearchChange(e.target.value)}
         placeholder="Wyszukaj miasto..."
         autoComplete="off"
         className="w-full rounded-xl bg-white py-3.5 pl-12 text-[clamp(0.875rem,0.5vw+0.4rem,1rem)] focus:outline-none focus:ring-2 focus:ring-blue-500/20"

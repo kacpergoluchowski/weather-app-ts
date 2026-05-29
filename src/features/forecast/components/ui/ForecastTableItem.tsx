@@ -5,63 +5,53 @@ import type { ForecastTableItemProps } from "../../../../types/forecast/Forecast
 import { getDayName } from "../../../../utils/getDayName";
 
 export default function ForecastTableItem({ data }: ForecastTableItemProps) {
-  const {
-    day,
-    icon,
-    description,
-    maxTemp,
-    minTemp,
-    precipitation,
-    wind,
-  } = data;
+  const { day, icon, description, maxTemp, minTemp, precipitation, wind } =
+    data;
 
   const iconSrc = getWeatherIconUrl(icon);
 
   return (
-    <li className="flex sm:grid sm:grid-cols-[auto_1fr_auto] items-center gap-3 py-3">
-      <div className="w-full">
-        <p className="text-sm font-semibold text-slate-950">{getDayName(day)}</p>
-        <p className="text-[10px] text-slate-500">{day}</p>
-      </div>
-
-      <div className="flex w-3/4 items-center justify-center gap-3">
-        <img
-          src={iconSrc}
-          alt={description}
-          loading="lazy"
-          className="w-8 shrink-0"
-        />
-
-        <div className="min-w-0">
+    <li className="gap-3 py-3">
+      <div className="flex items-center justify-between gap-4 w-full">
+        {/* Dzień */}
+        <div className="min-w-[90px]">
           <p className="text-sm font-semibold text-slate-950">
+            {getDayName(day)}
+          </p>
+          <p className="text-[10px] text-slate-500">{day}</p>
+        </div>
+
+        {/* Pogoda */}
+        <div className="flex flex-1 items-center justify-center gap-3">
+          <img
+            src={iconSrc}
+            alt={description}
+            loading="lazy"
+            className="w-8 shrink-0"
+          />
+
+          <p className="text-sm font-semibold text-slate-950 whitespace-nowrap">
             {maxTemp}°<span className="text-blue-500"> / {minTemp}°</span>
           </p>
-
-        </div>
-      </div>
-
-      <div className="hidden sm:flex items-center gap-4">
-        <div className="flex flex-col gap-1">
-          <p className="flex items-center gap-1 text-[10px] text-slate-600">
-            <Droplet className="size-[11px]" aria-hidden="true" />
-            {precipitation} mm
-          </p>
-
-          <p className="flex items-center gap-1 text-[10px] text-slate-600">
-            <Wind className="size-[11px]" aria-hidden="true" />
-            {wind} km/h
-          </p>
         </div>
 
-        <button
-          type="button"
-          aria-label={`Pokaż szczegóły prognozy dla ${day}`}
-          className="text-slate-400"
-        >
-          <ChevronRight className="size-3" aria-hidden="true" />
-        </button>        
+        {/* Szczegóły */}
+        <div className="flex items-center gap-5">
+          <div className="hidden sm:flex sm:flex-col md:flex-row md:justify-around md:w-60 gap-4">
+            <p className="flex items-center gap-1 text-[10px] md:text-[12px] text-slate-600 whitespace-nowrap">
+              <Droplet className="size-[11px] md:size-[13px]" />
+              {precipitation} mm
+            </p>
+
+            <p className="flex items-center gap-1 text-[10px] md:text-[12px] text-slate-600 whitespace-nowrap">
+              <Wind className="size-[11px] md:size-[13px]" />
+              {wind} km/h
+            </p>
+          </div>
+
+          <ChevronRight className="size-3 text-slate-400" aria-hidden="true" />
+        </div>
       </div>
-      <ChevronRight className="size-3 sm:hidden"/>
     </li>
   );
 }

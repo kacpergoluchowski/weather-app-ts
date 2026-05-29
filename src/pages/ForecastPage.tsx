@@ -13,7 +13,7 @@ export default function ForecastPage() {
   const weeklySummaryData = getWeeklySummary(weeklyData);
 
   return (
-    <section className="mx-6">
+    <section className="mx-6 pb-3">
       <ForecastTable data={weeklyData} />
       <WeeklySummaryCard data={weeklySummaryData} />
       <div className="lg:flex gap-3">
