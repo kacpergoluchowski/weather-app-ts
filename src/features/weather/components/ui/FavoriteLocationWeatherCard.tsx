@@ -33,7 +33,14 @@ export default function FavoriteLocationWeatherCards({
   const weather = transformWeatherData(data);
   const today = weather.weekly[0];
 
-  const forecast = weather.weekly.slice(0, 5).map((day) => ({
+  const forecast = weather.weekly.slice(0, 5).map(
+  (day: {
+    day: string;
+    icon: string;
+    description: string;
+    maxTemp: number;
+    minTemp: number;
+  }) => ({
     day: new Date(day.day).toLocaleDateString("pl-PL", {
       weekday: "short",
     }),
@@ -41,7 +48,8 @@ export default function FavoriteLocationWeatherCards({
     description: day.description,
     maxTemp: day.maxTemp,
     minTemp: day.minTemp,
-  }));
+  }),
+);
 
   return (
     <FavoriteLocationCard
